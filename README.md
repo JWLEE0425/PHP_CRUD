@@ -7,7 +7,7 @@
 * 言語 <br>
 PHP
 * DB <br>
-MySQL
+MariaDB
 * Javascript/HTML/bootstrap
 ### 機能
 * ログイン
