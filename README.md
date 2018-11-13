@@ -18,6 +18,9 @@ MariaDB
 
 > 重複チェックをしなかったら、登録はできません。
 
+![3](https://user-images.githubusercontent.com/43987455/48407616-98c6ec80-e77a-11e8-9332-7075655e1202.JPG)
+
+![4](https://user-images.githubusercontent.com/43987455/48407623-9c5a7380-e77a-11e8-98d4-501cd15785ef.JPG)
 
 #### ログイン
 > 
