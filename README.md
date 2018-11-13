@@ -26,7 +26,7 @@ MariaDB
 ![4](https://user-images.githubusercontent.com/43987455/48407623-9c5a7380-e77a-11e8-98d4-501cd15785ef.JPG)
 
 #### ログイン
-> ログインです。IDがない場合やPASSWORDが違う場合はログインできません。
+> ログインです。IDがない場合やPasswordが違う場合はログインできません。
 
 ![1](https://user-images.githubusercontent.com/43987455/48407976-797c8f00-e77b-11e8-818c-ec546fe59fea.JPG)
 
