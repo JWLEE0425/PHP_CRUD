@@ -10,8 +10,8 @@ PHP
 MariaDB
 * Javascript/HTML/bootstrap
 ### 機能
-* ログイン
-* 会員登録
-* 掲示板
+#### ログイン
+#### 会員登録
+#### 掲示板
 
 
