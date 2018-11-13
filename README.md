@@ -4,9 +4,9 @@
 * PHPに作った簡単な**CRUD(Create, Read, Update, Delete)掲示板**です。
 
 ### 開発言語
-* 言語 <br>
+* **言語** <br>
 PHP
-* DB <br>
+* **DB** <br>
 MariaDB
 * Javascript/HTML/bootstrap
 ### 機能紹介
