@@ -11,7 +11,7 @@ MariaDB
 * Javascript/HTML/bootstrap
 ### 機能紹介
 #### 会員登録
-> 会員登録です。IDとnicknameを入力してnicknameに活動します。
+> 会員登録です。IDとnicknameを入力してnicknameに活動します。<br>
 ![2](https://user-images.githubusercontent.com/43987455/48406965-1e499d00-e779-11e8-893b-a14ff2af710d.JPG)
 #### ログイン
 > 
