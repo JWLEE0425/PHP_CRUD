@@ -15,6 +15,10 @@ MariaDB
 > IDとnicknameには重複チェック機能があります。
 
 ![2](https://user-images.githubusercontent.com/43987455/48406965-1e499d00-e779-11e8-893b-a14ff2af710d.JPG)
+
+> 重複チェックをしなかったら、登録はできません。
+
+
 #### ログイン
 > 
 
