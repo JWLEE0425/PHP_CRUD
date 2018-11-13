@@ -5,9 +5,9 @@
 
 ### 開発言語
 * 言語 
-<pre><code>php</code></pre>
+   +PHP
 * DB
-   + MySQL
+   +MySQL
 * Javascript/HTML/bootstrap
 ### 機能
 * ログイン
