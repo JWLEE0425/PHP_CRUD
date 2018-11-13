@@ -31,7 +31,7 @@ MariaDB
 ![1](https://user-images.githubusercontent.com/43987455/48407976-797c8f00-e77b-11e8-818c-ec546fe59fea.JPG)
 
 #### 掲示板
-> 掲示板です。掲示物の、名前、題目、内容、時間が出ます。
+> 掲示板です。掲示物のno、名前、題目、内容、時間が出ます。
 
 ![5](https://user-images.githubusercontent.com/43987455/48408228-27883900-e77c-11e8-8e59-880c006f03ed.JPG)
 
