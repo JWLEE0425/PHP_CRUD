@@ -35,7 +35,11 @@ MariaDB
 
 ![5](https://user-images.githubusercontent.com/43987455/48408228-27883900-e77c-11e8-8e59-880c006f03ed.JPG)
 
-> 掲示板上にログインした人のnicknameが出ます。
+> 掲示板上にはログインした人のnicknameが出ます。
 
 ![5](https://user-images.githubusercontent.com/43987455/48408272-4b4b7f00-e77c-11e8-8c47-a104f195b5d4.JPG)
+
+> アップロードの時、名前は自動的にnicknameになります。
+
+![6](https://user-images.githubusercontent.com/43987455/48408398-94033800-e77c-11e8-8263-8879fb9407c5.JPG)
 
