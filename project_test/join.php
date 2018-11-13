@@ -1,6 +1,6 @@
 <script>
-function check(){  //重複チェック
-	document.getElementById("chk_id2").value=0;  //　重複チェックをしなかったので、基本は０(false)。
+function checkID(){  //重複チェック
+	document.getElementById("chk_id").value=0;  //　重複チェックをしなかったので、基本は０(false)。
 	var id = document.getElementById("user_id").value;  //　会員登録する時のIDをもらう。
   
   	if(id == "") { //　IDを書いてなかったら、チェックができません。
@@ -8,10 +8,24 @@ function check(){  //重複チェック
   		exit;
   	}
   
-  	ifrm1.location.href="join_chk.php?userid="+id; //　join_chk.phpがGETできるIDを設定。
+  	ifrm1.location.href="join_chkID.php?userid="+id; //　join_chk.phpがGETできるIDを設定。
  }
 
+function checkNickname(){  //重複チェック
+	document.getElementById("chk_nickname").value=0;  //　重複チェックをしなかったので、基本は０(false)。
+	var nickname = document.getElementById("nickname").value;  //　会員登録する時のnicknameをもらう。
+  
+  	if(nickname == "") { //　nicknameを書いてなかったら、チェックができません。
+  		alert("nicknameを書いてください。");
+  		exit;
+  	}
+  
+  	ifrm1.location.href="join_chkNickname.php?nickname="+nickname; //　join_chk.phpがGETできるnicknameを設定。
+ }
+
+
 </script>
+
 
 <html lang="en">
   <head>
@@ -40,9 +54,9 @@ function check(){  //重複チェック
 			<tr>
 				<td colspan=2> 
 					<input type="text" class="form-control" id="user_id" placeholder="ID" name="user_id" maxlength=15>
-					<input type=button value="重複チェック" onclick="check()">
+					<input type=button value="重複チェック" onclick="checkID()">
 				</td>
-  				<td><input type=hidden id="chk_id2" name=chk_id2 value="0"></td>
+  				<td><input type=hidden id="chk_id" name=chk_id value="0"></td>
 			</tr>
 			<tr>
 				<td><input type="password" class="form-control" id="password" placeholder="Password" name="password" maxlength=20></td>
@@ -51,7 +65,12 @@ function check(){  //重複チェック
 				<td><input type="password" class="form-control" id="password2" placeholder="Confirm Password" name="password2" maxlength=20></td>
 			</tr>
 			<tr>
-				<td><input type="text" class="form-control" id="nickname" placeholder="nickname" name="nickname" maxlength=20></td>
+				<td colspan=2>
+					<input type="text" class="form-control" id="nickname" placeholder="nickname" name="nickname" maxlength=20>
+					<input type=button value="重複チェック" onclick="checkNickname()">
+				</td>
+				<td><input type=hidden id="chk_nickname" name=chk_nickname value="0"></td>
+				
 			</tr>
 			<tr><td colspan=3>&nbsp;</td></tr>
 			<tr>
