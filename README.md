@@ -10,8 +10,11 @@ PHP
 MariaDB
 * Javascript/HTML/bootstrap
 ### 機能紹介
-#### ログイン
 #### 会員登録
+> 会員登録です。IDとnicknameを入力してnicknameに活動します。
+#### ログイン
+> 
+
 #### 掲示板
 
 
