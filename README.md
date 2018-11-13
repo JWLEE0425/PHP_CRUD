@@ -5,7 +5,7 @@
 
 ### 開発言語
 * 言語 
-   + PHP
+<pre><code>php</code></pre>
 * DB
    + MySQL
 * Javascript/HTML/bootstrap
