@@ -9,7 +9,7 @@ PHP
 * DB <br>
 MariaDB
 * Javascript/HTML/bootstrap
-### 機能
+### 機能紹介
 #### ログイン
 #### 会員登録
 #### 掲示板
