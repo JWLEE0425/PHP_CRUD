@@ -5,11 +5,14 @@
 
 ### 開発言語
 * **言語** <br>
-PHP, Javascript, HTML, bootstrap
-### 機能紹介
+PHP
+
 * **DB** <br>
 MariaDB
 
+* Javascript, HTML, bootstrap
+
+### 機能紹介
 #### 会員登録
 > 会員登録です。IDとnicknameを入力します。
 > IDとnicknameには重複チェック機能があります。
