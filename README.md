@@ -5,9 +5,9 @@
 
 ### 開発言語
 * 言語 
-   + PHP
+- PHP
 * DB
-   + MySQL
+- MySQL
 * Javascript/HTML/bootstrap
 ### 機能
 * ログイン
