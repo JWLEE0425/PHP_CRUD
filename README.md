@@ -53,4 +53,6 @@ MariaDB
 
 ![9](https://user-images.githubusercontent.com/43987455/48409293-c3b33f80-e77e-11e8-8e1e-5b0a2baa39a5.JPG)
 
+#### ログアウト
+> ログアウトをクリックすると、ログイン画面に戻ります。
 
