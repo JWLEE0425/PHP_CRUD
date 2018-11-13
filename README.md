@@ -1,4 +1,8 @@
 # PHP_CRUD
+==========
+
+概要
+----
 PHPに作った簡単な**CRUD(Create, Read, Update, Delete)掲示板**です。
 
 1. ログイン
