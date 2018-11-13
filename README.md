@@ -4,10 +4,10 @@
 * PHPに作った簡単な**CRUD(Create, Read, Update, Delete)掲示板**です。
 
 ### 開発言語
-* 言語 
-  - PHP
-* DB
-  - MySQL
+* 言語; 
+ PHP
+* DB;
+ MySQL
 * Javascript/HTML/bootstrap
 ### 機能
 * ログイン
