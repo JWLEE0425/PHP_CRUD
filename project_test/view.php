@@ -51,7 +51,9 @@ include('lock.php');  // session登録
         
       </div>
     </nav>
+    
 
+	
 	<br><br>
 	<?php
     $con = db_con();
@@ -89,8 +91,8 @@ include('lock.php');  // session登録
 			<a href="index.php"><input type=button class="btn btn-default login-popup-btn" value='リスト'></a>&nbsp;&nbsp;
 			<a href="write_modify.php?no=<?php echo $row['no']?>"><!-- write_modify.phpでGETできる為の no設定 -->
 			<input type=button class="btn btn-default login-popup-btn" value='修正' ></a>&nbsp;&nbsp;
-			<a href="write_delete.php?no=<?php echo $row['no']?>"><!-- write_delete.phpでGETできる為の no設定 -->
-			<input type=button class="btn btn-default login-popup-btn" value='削除' ></a>
+			<a href="write_delete.php?no=<?php echo $row['no']?>" class="confirm" title="delete OK?"><!-- write_delete.phpでGETできる為の no設定 -->
+			<input type=button class="btn btn-default login-popup-btn" value='削除'></a>
 		</div>
 		<?php
 		} else {    //　自分の掲示物ではなかったら、修正不可能。
@@ -99,6 +101,20 @@ include('lock.php');  // session登録
 			<a href="index.php"><input type=button class="btn btn-default login-popup-btn" value='リスト'></a>&nbsp;&nbsp;
 		</div>
 		<?php 
+		}
+		?>
+		<br>
+		<!-- adminの場合は全部修正/削除か可能。 -->
+		<?php
+		if($login_session == 'admin') {
+		?>
+		<div align="center">
+			<a href="write_modify.php?no=<?php echo $row['no']?>"><!-- write_modify.phpでGETできる為の no設定 -->
+			<input type=button class="btn btn-default login-popup-btn" value='修正' ></a>&nbsp;&nbsp;
+			<a href="write_delete.php?no=<?php echo $row['no']?>"><!-- write_delete.phpでGETできる為の no設定 -->
+			<input type=button class="btn btn-default login-popup-btn" value='削除'></a>
+		</div>
+		<?php
 		}
 		?>
     </div>
