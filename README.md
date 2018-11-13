@@ -43,3 +43,13 @@ MariaDB
 
 ![6](https://user-images.githubusercontent.com/43987455/48408398-94033800-e77c-11e8-8263-8879fb9407c5.JPG)
 
+> 自分の掲示物だけを修正/削除が可能です。
+
+![7](https://user-images.githubusercontent.com/43987455/48409096-52738c80-e77e-11e8-92ae-4e76a8da265b.JPG)
+
+![8](https://user-images.githubusercontent.com/43987455/48409097-52738c80-e77e-11e8-83a7-55b5ce2355b6.JPG)
+
+
+
+
+
