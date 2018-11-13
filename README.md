@@ -30,6 +30,8 @@ MariaDB
 
 ![1](https://user-images.githubusercontent.com/43987455/48407976-797c8f00-e77b-11e8-818c-ec546fe59fea.JPG)
 
+![default](https://user-images.githubusercontent.com/43987455/48410033-d595e200-e780-11e8-9647-bf6ef4a834f7.JPG)
+
 #### 掲示板
 > 掲示板です。掲示物のno、名前、題目、時間の情報が出ます。題目をクリックしたら、内容を見ることができます。
 
