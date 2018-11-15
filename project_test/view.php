@@ -84,7 +84,7 @@ include('lock.php');  // session登録
 		</table>
 		<br>
 		<?php
-		if($row['nickname'] == $login_session) {    //　自分の掲示物だけを修正可能。
+		if($row['nickname'] == $login_session && $login_session != 'admin') {    //　自分の掲示物だけを修正可能。
 		
 		?>
 		<div align="center">
