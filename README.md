@@ -35,12 +35,13 @@ MariaDB
 #### 掲示板
 > 掲示板です。掲示物のno、名前、題目、時間の情報が出ます。題目をクリックしたら、内容を見ることができます。
 
-![1](https://user-images.githubusercontent.com/43987455/48689405-bf1ed900-ec0d-11e8-8e5b-ef390ee5c15c.JPG)
+![1](https://user-images.githubusercontent.com/43987455/48695404-69086080-ec22-11e8-960e-dac2a7138a14.JPG)
 
 > 掲示板はページング機能があります。
 
-![2_1](https://user-images.githubusercontent.com/43987455/48689652-cd212980-ec0e-11e8-95a4-f2e6ea174916.jpg)
-![2_2](https://user-images.githubusercontent.com/43987455/48689653-cd212980-ec0e-11e8-84be-09c0e53d86fb.jpg)
+![_2_1](https://user-images.githubusercontent.com/43987455/48695517-b2f14680-ec22-11e8-8c98-e468d1be2cbd.jpg)
+![_2_2](https://user-images.githubusercontent.com/43987455/48695518-b2f14680-ec22-11e8-9ddb-a967f49396aa.jpg)
+![_2_3](https://user-images.githubusercontent.com/43987455/48695515-b258b000-ec22-11e8-9a81-1cae74cc08ed.jpg)
 
 > 掲示板上にはログインした人のnicknameが出ます。
 
