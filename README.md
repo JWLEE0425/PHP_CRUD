@@ -43,7 +43,7 @@ MariaDB
 ![_2_2](https://user-images.githubusercontent.com/43987455/48695518-b2f14680-ec22-11e8-9ddb-a967f49396aa.jpg)
 ![_2_3](https://user-images.githubusercontent.com/43987455/48695515-b258b000-ec22-11e8-9a81-1cae74cc08ed.jpg)
 
-> 題目、内容、名前名前の一部分で検索可能です。
+> 題目や内容や名前の一部分で検索可能です。
 
 ![11](https://user-images.githubusercontent.com/43987455/48695646-fe0b5980-ec22-11e8-8d50-5523c101e052.jpg)
 ![22](https://user-images.githubusercontent.com/43987455/48695827-8984ea80-ec23-11e8-8dc8-1afc21a92267.JPG)
