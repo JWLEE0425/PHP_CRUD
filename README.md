@@ -46,7 +46,7 @@ MariaDB
 > 題目、内容、名前名前の一部分で検索可能です。
 
 ![11](https://user-images.githubusercontent.com/43987455/48695646-fe0b5980-ec22-11e8-8d50-5523c101e052.jpg)
-![22](https://user-images.githubusercontent.com/43987455/48695769-61958700-ec23-11e8-92c4-edfbe88a3377.JPG)
+![22](https://user-images.githubusercontent.com/43987455/48695827-8984ea80-ec23-11e8-8dc8-1afc21a92267.JPG)
 
 > 掲示板上にはログインした人のnicknameが出ます。
 
