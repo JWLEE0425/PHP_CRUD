@@ -2,13 +2,29 @@
 include('lock.php');  // session登録
 $con = db_con();
 
+// 検索
+if(isset($_GET['searchColumn'])) {  // 検索するコラム
+    $searchColumn = $_GET['searchColumn'];
+}
+
+if(isset($_GET['searchText'])) {  // 検索する内容
+    $searchText = $_GET['searchText'];
+}
+
+
+if(isset($searchColumn) && isset($searchText)) {  // likeを使って選択したコラムと内容が含まれている掲示物を探す。
+    $searchSql = ' where ' . $searchColumn . ' like "%' . $searchText . '%"';
+} else {
+    $searchSql = '';  // 何も選択しなかったら、空白
+}
+
 // ページング
 if(isset($_GET['page'])) {
     $page = $_GET['page'];
 } else {    
     $page = 1;    
 }
-$sql = 'select count(*) as cnt from board order by no desc';  //　boardテーブルの個数をcountする
+$sql = 'select count(*) as cnt from board' . $searchSql;  //　boardテーブルの個数をcountする
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
 
@@ -48,7 +64,6 @@ $paging .= '<li class="page page_start">
 for($i = $firstPage; $i <= $lastPage; $i++) {
     if($i == $page) {  //　現在選択したボタン
         $paging .= '<li class="page active">
-                    
                     <a class="page-link" href="./index.php?page=' . $i . '"><span style="font-weight:bold">' . $i . '
                     </span>
                     </a></li>';
@@ -70,8 +85,10 @@ $paging .= '</ul>';
 
 $currentLimit = ($onePage * $page) - $onePage;  //　何回目の文から持ってくるのかをきめる。
 $sqlLimit = ' limit ' . $currentLimit . ', ' . $onePage;  //　limit sql
-$sql = 'select * from board order by no desc' . $sqlLimit;  //　$currentLimitの個数を持ってきます。
+$sql = 'select * from board' . $searchSql .' order by no desc' . $sqlLimit;  //　$currentLimitの個数を持ってきます。
 $result = mysqli_query($con, $sql);
+
+
 ?>
 
 
@@ -198,7 +215,21 @@ $result = mysqli_query($con, $sql);
 		<?php echo $paging ?>
 		</div>
       </div>
-	
+	  <br>
+	  <div class="searchBox">
+	  <form class="form-inline" action="./index.php" method="get">
+	  <div class="form-group">
+	  	<select name="searchColumn" class="btn btn-default login-popup-btn">
+			<option value="title">題目</option>
+			<option value="content">内容</option>
+			<option value="nickname">名前</option>
+	  	</select>&nbsp;&nbsp;
+	  <input type="text" class="form-control" style="width:300px" name="searchText" >&nbsp;&nbsp;
+	  <button type="submit" class="btn btn-default login-popup-btn">検索</button>
+	  </div>
+	  </form>	
+	  </div>
+	 
     </div>
     </div>
 	
