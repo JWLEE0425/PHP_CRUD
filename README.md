@@ -35,7 +35,7 @@ MariaDB
 #### 掲示板
 > 掲示板です。掲示物のno、名前、題目、時間の情報が出ます。題目をクリックしたら、内容を見ることができます。
 
-![5](https://user-images.githubusercontent.com/43987455/48408228-27883900-e77c-11e8-8e59-880c006f03ed.JPG)
+![1](https://user-images.githubusercontent.com/43987455/48689381-9dbded00-ec0d-11e8-980f-1d724031814d.JPG)
 
 > 掲示板上にはログインした人のnicknameが出ます。
 
