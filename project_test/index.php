@@ -2,55 +2,51 @@
 include('lock.php');  // session登録
 $con = db_con();
 
-/* 페이징 시작 */
+// ページング
 if(isset($_GET['page'])) {
     $page = $_GET['page'];
 } else {    
     $page = 1;    
 }
-$sql = 'select count(*) as cnt from board order by no desc';
+$sql = 'select count(*) as cnt from board order by no desc';  //　boardテーブルの個数をcountする
 $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
 
-$allPost = $row['cnt']; //전체 게시글의 수
-$onePage = 5; // 한 페이지에 보여줄 게시글의 수.
-$allPage = ceil($allPost / $onePage); //전체 페이지의 수
+$allPost = $row['cnt'];  //　全体掲示物の数
+$onePage = 5;  //　1ページに見せる掲示物の数
+$allPage = ceil($allPost / $onePage);  //　全体ページの数
 
-if($page < 1 || ($allPage && $page > $allPage)) {
+if($page < 1 || ($allPage && $page > $allPage)) {  //　存在しないページを入力する場合
 ?>
 <script>
-	alert("존재하지 않는 페이지입니다.");
+	alert("存在しないページです。");
 	history.back();
 </script>
 <?php
     exit;
 }
 
-$oneSection = 10; //한번에 보여줄 총 페이지 개수
-$currentSection = ceil($page / $oneSection); //현재 섹션
-$allSection = ceil($allPage / $oneSection); //전체 섹션의 수
-$firstPage = ($currentSection * $oneSection) - ($oneSection - 1); //현재 섹션의 처음 페이지
+$oneSection = 5;  //　一度に見せる総ページ個数
+$currentSection = ceil($page / $oneSection);  //　現在のセクション
+$allSection = ceil($allPage / $oneSection);  //　全体セクションの数
+$firstPage = ($currentSection * $oneSection) - ($oneSection - 1);  //　現在のセクションの初めてページ
 
 if($currentSection == $allSection) {
-    $lastPage = $allPage; //현재 섹션이 마지막 섹션이라면 $allPage가 마지막 페이지가 된다.
+    $lastPage = $allPage; //　現在のセクションが最後のセクションならば$allPageが最後のページになります。
 } else {
-    $lastPage = $currentSection * $oneSection; //현재 섹션의 마지막 페이지
+    $lastPage = $currentSection * $oneSection; //　現在のセクションの最後のページ
 }
-$prevPage = (($currentSection - 1) * $oneSection); //이전 페이지, 11~20일 때 이전을 누르면 10 페이지로 이동.
-$nextPage = (($currentSection + 1) * $oneSection) - ($oneSection - 1); //다음 페이지, 11~20일 때 다음을 누르면 21 페이지로 이동.
+$paging = '<ul class="pagination">'; //　ページングを保存する変数
 
-$paging = '<ul class="pagination">'; // 페이징을 저장할 변수
-
-//처음 버튼을 생성
+//　初めのボタン
 $paging .= '<li class="page page_start">
             <a class="page-link" href="./index.php?page=1" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
             <span class="sr-only">Previous</span>
             </a></li>';
 
-
 for($i = $firstPage; $i <= $lastPage; $i++) {
-    if($i == $page) {
+    if($i == $page) {  //　現在選択したボタン
         $paging .= '<li class="page active">
                     
                     <a class="page-link" href="./index.php?page=' . $i . '"><span style="font-weight:bold">' . $i . '
@@ -63,7 +59,7 @@ for($i = $firstPage; $i <= $lastPage; $i++) {
     }
 }
 
-// 끝 버튼을 생성
+//　終わりのボタン
 $paging .= '<li class="page page_end">
             <a class="page-link" href="./index.php?page=' . $allPage . '" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
@@ -72,11 +68,9 @@ $paging .= '<li class="page page_end">
 
 $paging .= '</ul>';
 
-	
-/* 페이징 끝 */
-$currentLimit = ($onePage * $page) - $onePage; //몇 번째의 글부터 가져오는지
-$sqlLimit = ' limit ' . $currentLimit . ', ' . $onePage; //limit sql 구문
-$sql = 'select * from board order by no desc' . $sqlLimit; //원하는 개수만큼 가져온다. (0번째부터 20번째까지
+$currentLimit = ($onePage * $page) - $onePage;  //　何回目の文から持ってくるのかをきめる。
+$sqlLimit = ' limit ' . $currentLimit . ', ' . $onePage;  //　limit sql
+$sql = 'select * from board order by no desc' . $sqlLimit;  //　$currentLimitの個数を持ってきます。
 $result = mysqli_query($con, $sql);
 ?>
 
