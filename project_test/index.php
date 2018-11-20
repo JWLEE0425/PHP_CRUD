@@ -2,12 +2,6 @@
 include('lock.php');  // session登録
 $con = db_con();
 
-if(isset($_GET['see'])) {  // 検索するコラム
-    $searchColumn = $_GET['see'];
-} else {
-    $see = 5;
-}
-
 
 // 検索
 if(isset($_GET['searchColumn'])) {  // 検索するコラム
@@ -36,7 +30,7 @@ $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
 
 $allPost = $row['cnt'];  //　全体掲示物の数
-$onePage = $see;  //　1ページに見せる掲示物の数
+$onePage = 5;  //　1ページに見せる掲示物の数
 $allPage = ceil($allPost / $onePage);  //　全体ページの数
 
 if($page < 1 || ($page > $allPage)) {  //　存在しないページを入力する場合
