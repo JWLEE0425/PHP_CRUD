@@ -29,10 +29,10 @@ $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
 
 $allPost = $row['cnt'];  //　全体掲示物の数
-$onePage = 5;  //　1ページに見せる掲示物の数
+$onePage = 3;  //　1ページに見せる掲示物の数
 $allPage = ceil($allPost / $onePage);  //　全体ページの数
 
-if($page < 1 || ($allPage && $page > $allPage)) {  //　存在しないページを入力する場合
+if($page < 1 || ($page > $allPage)) {  //　存在しないページを入力する場合
 ?>
 <script>
 	alert("存在しないページです。");
@@ -42,7 +42,7 @@ if($page < 1 || ($allPage && $page > $allPage)) {  //　存在しないページ
     exit;
 }
 
-$oneSection = 5;  //　一度に見せる総ページ個数
+$oneSection = 3;  //　一度に見せる総ページ個数
 $currentSection = ceil($page / $oneSection);  //　現在のセクション
 $allSection = ceil($allPage / $oneSection);  //　全体セクションの数
 $firstPage = ($currentSection * $oneSection) - ($oneSection - 1);  //　現在のセクションの初めてページ
@@ -54,6 +54,10 @@ if($currentSection == $allSection) {
 }
 $paging = '<ul class="pagination">'; //　ページングを保存する変数
 
+$prevPage = (($currentSection - 1) * $oneSection); 
+$nextPage = (($currentSection + 1) * $oneSection) - ($oneSection - 1); 
+
+
 //　初めのボタン
 $paging .= '<li class="page page_start">
             <a class="page-link" href="./index.php?page=1" aria-label="Previous">
@@ -61,7 +65,14 @@ $paging .= '<li class="page page_start">
             <span class="sr-only">Previous</span>
             </a></li>';
 
+$paging .= '<li class="page">
+            <a class="page-link" href="./index.php?page=' . $prevPage . '">
+            <span aria-hidden="true"><</span>
+            <span class="sr-only">Previous</span>
+            </a></li>';
+
 for($i = $firstPage; $i <= $lastPage; $i++) {
+    
     if($i == $page) {  //　現在選択したボタン
         $paging .= '<li class="page active">
                     <a class="page-link" href="./index.php?page=' . $i . '"><span style="font-weight:bold">' . $i . '
@@ -73,6 +84,12 @@ for($i = $firstPage; $i <= $lastPage; $i++) {
                     </a></li>';
     }
 }
+
+$paging .= '<li class="page">
+            <a class="page-link" href="./index.php?page=' . $nextPage . '">
+            <span aria-hidden="true">></span>
+            <span class="sr-only">Previous</span>
+            </a></li>';
 
 //　終わりのボタン
 $paging .= '<li class="page page_end">
@@ -107,7 +124,7 @@ $result = mysqli_query($con, $sql);
 
     
     ul.pagination {
-        width: 150px;
+        width: 300px;
         margin-left: auto;
         margin-right: auto;
     }
