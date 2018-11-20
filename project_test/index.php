@@ -2,6 +2,13 @@
 include('lock.php');  // session登録
 $con = db_con();
 
+if(isset($_GET['see'])) {  // 検索するコラム
+    $searchColumn = $_GET['see'];
+} else {
+    $see = 5;
+}
+
+
 // 検索
 if(isset($_GET['searchColumn'])) {  // 検索するコラム
     $searchColumn = $_GET['searchColumn'];
@@ -29,7 +36,7 @@ $result = mysqli_query($con, $sql);
 $row = mysqli_fetch_assoc($result);
 
 $allPost = $row['cnt'];  //　全体掲示物の数
-$onePage = 3;  //　1ページに見せる掲示物の数
+$onePage = $see;  //　1ページに見せる掲示物の数
 $allPage = ceil($allPost / $onePage);  //　全体ページの数
 
 if($page < 1 || ($page > $allPage)) {  //　存在しないページを入力する場合
@@ -54,8 +61,8 @@ if($currentSection == $allSection) {
 }
 $paging = '<ul class="pagination">'; //　ページングを保存する変数
 
-$prevPage = (($currentSection - 1) * $oneSection); 
-$nextPage = (($currentSection + 1) * $oneSection) - ($oneSection - 1); 
+$prevPage = (($currentSection - 1) * $oneSection);  //　以前のページに行く
+$nextPage = (($currentSection + 1) * $oneSection) - ($oneSection - 1);  //　次のページに行く
 
 
 //　初めのボタン
@@ -187,6 +194,17 @@ $result = mysqli_query($con, $sql);
 	<br>
 	<div class="jumbotron">
       <div class="container">
+      
+      <form action="index.php" method="post" align="right">
+	  <div class="form-group">
+	  	<select name="see" class="btn btn-default login-popup-btn">
+			<option value='3'>３個</option>
+			<option value='5' selected>５個</option>
+			<option value='10'>10個</option>
+	  	</select>
+	  </div>
+	  </form>	
+	  
         <table class="table table-striped">
           <thead>
             <tr>
@@ -234,6 +252,7 @@ $result = mysqli_query($con, $sql);
       </div>
 	  <br>
 	  <div class="searchBox">
+	  
 	  <form class="form-inline" action="./index.php" method="get">
 	  <div class="form-group">
 	  	<select name="searchColumn" class="btn btn-default login-popup-btn">
