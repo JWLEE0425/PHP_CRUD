@@ -7,6 +7,9 @@
 * **言語** <br>
 PHP
 
+* **サーバー**<br>
+Apache 2.4
+
 * **DB** <br>
 MariaDB
 
